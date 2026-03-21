@@ -31,23 +31,7 @@ Every project in this repository is strictly developed using a rigorous **10-Ste
 * **Project #07: Credit Card Clustering** - Financial behavioral grouping.
 
 #### 📈 2. Time Series, Finance & Anomaly Detection
-* **Project #01: Gold Price Prediction (Regression)** 
-    
-
-    1. **Objective:** Forecasting USD (AM) Gold Prices based on international currency benchmarks.
-    2. **EDA:** Identified strong positive correlations between USD, GBP, and EURO gold fixings.
-    3. **Feature Selection:** Selected `USD (PM)`, `GBP (AM)`, `EURO (AM)`, and `EURO (PM)` as primary predictors.
-    4. **Categorical Transformation:** Dataset was purely numerical; no transformation required.
-    5. **Data Cleaning:** Handled feature alignment and automated "Space Ghost" file detection.
-    6. **Feature Engineering:** Leveraged the temporal relationship between AM and PM fixings.
-    7. **OHE/Scaling:** Random Forest Regressor utilized to maintain variance and non-linear patterns.
-    8. **Train/Test Split:** 80/20 split to ensure performance stability on unseen market shifts.
-    9. **Training:** Implemented **Random Forest Regressor** ($n\_estimators=100$).
-    10. **Deployment:** Live on Hugging Face with a custom Cyber-Neon Streamlit UI.
-
-    👉 **[Launch Live Deployment on Hugging Face](PASTE_YOUR_LINK_HERE)**
-    </details>
-
+* **Project #01: Gold Price Prediction (Regression)**
 * **Project #08: Uber Fares Prediction** - Dynamic pricing regression.
 * **Project #09: Bitcoin Price Prediction** - Volatility forecasting with Time Series.
 * **Project #10: Weather Forecasting** - Predictive meteorology models.
