@@ -32,8 +32,7 @@ Every project in this repository is strictly developed using a rigorous **10-Ste
 
 #### 📈 2. Time Series, Finance & Anomaly Detection
 * **Project #01: Gold Price Prediction (Regression)** 
-    <details>
-    <summary><b>Click to view 10-Step Implementation Details</b></summary>
+    
 
     1. **Objective:** Forecasting USD (AM) Gold Prices based on international currency benchmarks.
     2. **EDA:** Identified strong positive correlations between USD, GBP, and EURO gold fixings.
