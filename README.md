@@ -31,7 +31,7 @@ Every project in this repository is strictly developed using a rigorous **10-Ste
 * **Project #07: Credit Card Clustering** - Financial behavioral grouping.
 
 #### 📈 2. Time Series, Finance & Anomaly Detection
-* **Project #01: Aureus Gold Predictor** - LBMA benchmark forecasting with **0.9997 $R^2$**. (Completed ✅)
+* **Project #01: Gold Price Prediction (Regression)** 
     <details>
     <summary><b>Click to view 10-Step Implementation Details</b></summary>
 
