@@ -50,7 +50,7 @@ This engine was built using a specialized **10-Step NLP Pipeline** designed spec
 ## 🚀 Live Security Demo
 Test the Security Shield in real-time. Paste any suspicious message to see if the engine flags it as a threat:
 
-👉 **[Hugging Face Live Demo: SMS Security Shield](YOUR_HUGGINGFACE_LINK_HERE)**
+👉 **[Hugging Face Live Demo: SMS Security Shield](https://huggingface.co/spaces/Ironside35/SentryAI-SMS-Shield)**
 
 ---
 *Next Stop: Project #19 - RFM Customer Segmentation (Analyzing the Flow of Loyalty and Money) 📊🏗️*
