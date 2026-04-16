@@ -1,52 +1,30 @@
-# 🏆 Project #15: Fashion Style Matching Engine
-**Architect:** Kemal Demirbaş 🏰🚀 | **Project Series:** 15 of 21
+# 🛍️ Project #15: Fashion Style Discovery Engine (Visual RecSys)
+### 🏛️ Data Science Portfolio: 15 / 21
 
-[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/Ironside35/style-fingerprint-engine)
-[![TensorFlow 2.16](https://img.shields.io/badge/TensorFlow-2.16-orange.svg)](https://www.tensorflow.org/)
-
-## 👔 Vision-Based Style Recommendation
-This project moves beyond simple image classification into the world of **Visual Search Engines**. By utilizing a Deep Convolutional Neural Network (CNN), we extract a **512-dimensional numerical representation (Embedding)** of clothing items. This allows the system to identify not just the category, but the unique "Style Fingerprint" of an item.
-
-### 📊 Performance Audit & Architect's Report
-* **Final Accuracy:** **88%** (Aligned with Fashion MNIST Global Standards).
-* **Model Optimization:** Implemented `BatchNormalization` for training stability and `Dropout (0.5)` to prevent overfitting.
-* **Spatial Ambiguity Insight:** While the model delivers surgical precision for **Trousers and Bags (98% F1-Score)**, it identifies a "Spatial Ambiguity" challenge between Shirts and T-shirts (61% Precision) due to the $28 \times 28$ resolution limit.
+**Architect:** Kemal Demirbaş 🏰🚀  
+**Framework:** Computer Vision (CNN) + Mathematical Similarity (Scipy Spatial)
 
 ---
 
-## 🏗️ Architectural Core (The Senior Reçete)
-The project followed a rigorous 10-step architectural process:
-1.  **Objective:** Build a recommendation-ready vision engine.
-2.  **EDA:** Audited 70,000 grayscale samples for class balance.
-3.  **Feature Selection:** 784 pixel intensity mapping.
-4.  **Transformation:** Tensor reshaping to $28 \times 28 \times 1$.
-5.  **Data Cleansing:** Normalizing pixel values to $[0, 1]$ range.
-6.  **Feature Engineering:** Real-time augmentation (Rotation, Zoom, Horizontal Flips).
-7.  **Encoding:** Categorical One-Hot encoding for 10 style labels.
-8.  **Partitioning:** Stratified 80/20 Train-Validation split audit.
-9.  **Model Execution:** Deep CNN architecture with a custom Embedding layer.
-10. **Performance Audit:** Metric analysis using Precision-Recall-F1 reports.
+## 🎯 Project Objective
+This project implements a visual "Style Matching" engine designed to find similar clothing items based on their spatial geometry and pixel patterns. By fusing **Convolutional Neural Networks (CNN)** for feature extraction with **Cosine Similarity** for mathematical ranking, the system transforms raw fashion images into searchable "Style Fingerprints," enabling automated visual recommendations.
 
 ---
 
-## 📐 The Mathematics of Style (Similarity Engine)
-The core of the recommendation system relies on **Cosine Similarity**. It calculates the angular distance between two style vectors in a 512-dimensional hyperspace:
+## 🛠️ The 10-Step Engineering Discipline
 
-$$\text{similarity} = \cos(\theta) = \frac{\mathbf{A} \cdot \mathbf{B}}{\|\mathbf{A}\| \|\mathbf{B}\|}$$
+1.  **Objective:** Build a content-based recommendation system using visual similarity.
+2.  **EDA:** Auditing the **Fashion MNIST** dataset to standardize 28x28 grayscale inputs.
+3.  **Feature Selection:** Automating feature discovery through multi-layered Convolutional filters to detect edges, textures, and clothing silhouettes.
+4.  **Transformation :** Normalizing pixel intensities to a `[0, 1]` range to ensure stable gradient descent during the CNN training phase.
+5.  **Feature Extraction (The CV Brain):** Architecting a custom **CNN** (based on `computervisionwithDL.ipynb`) to compress images into high-dimensional latent vectors (Style Embeddings).
+6.  **Encoding:** Utilizing `SparseCategoricalCrossentropy` to train the model, ensuring the internal weights are optimized for fashion-specific patterns.
+7.  **Modeling (The RecSys Engine):** Implementing a manual **Similarity Search** using `scipy.spatial.distance.cosine` (based on `RSKNN.ipynb`) to compute the mathematical "closeness" between items.
+8.  **Execution:** Extracting the 512-D visual DNA of a target item and querying the database for the top 5 nearest neighbors in the feature space.
+9.  **Performance Audit:** Validating recommendations through an visual "Audit Shelf," comparing the target item against predicted matches to verify spatial hierarchy.
+10. **Persistence:** Exporting the trained feature extraction layers to enable real-time style matching in a production environment.
 
----
-
-## 🚀 Live Demo
-Experience the "Style Fingerprint" technology in action. Upload any clothing item to see its mathematical DNA:
+    ### 🚀 Live Demo & Assets
+Experience the "Style DNA" technology live and inspect the persistent model files:
 👉 **[Live Fashion Recommender on Hugging Face](https://huggingface.co/spaces/Ironside35/style-fingerprint-engine)**
-
----
-
-## 🛠️ Tech Stack
-* **Engine:** TensorFlow / Keras 3
-* **Deployment:** Streamlit / Hugging Face Spaces
-* **Mathematics:** NumPy / Scikit-learn
-* **Image Processing:** PIL (Pillow)
-
----
-*Next Stop: Project #16 - Customer Segmentation (RFM Analysis) 📊💰*
+📦 **Assets:** `fashion_cnn_model.h5` | `database_features.pkl` |
