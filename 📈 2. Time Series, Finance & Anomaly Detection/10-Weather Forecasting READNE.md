@@ -1,57 +1,35 @@
-# 🌦️ Project #10: Predictive Meteorology Engine
-**Data Science Portfolio: 10 / 21**
+ 🌦️ Project #10: Weather Forecasting (Predictive Meteorology)
+### 🏛️ Data Science Portfolio: 10 / 21
 
-[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/Ironside35/weather-forecasting-ai)
-[![Python](https://img.shields.io/badge/Python-3.9+-green.svg)](https://www.python.org/)
-[![Model](https://img.shields.io/badge/Model-XGBoost-orange)](https://xgboost.readthedocs.io/)
-
-## 🎯 Project Overview
-This repository hosts a high-precision **Weather Forecasting Engine** designed to predict mean temperatures by analyzing non-linear relationships between humidity, wind speed, and barometric pressure. Utilizing the **Daily Delhi Climate Dataset**, the architecture implements an optimized **XGBoost Regressor** to capture both seasonal variances and short-term atmospheric shifts.
+**Architect:** Kemal Demirbaş 🏰🚀  
+**Framework:** Deep Learning (LSTM) | Time Series Forecasting
 
 ---
 
-## 🚀 Live Interactive Demo
-The model is deployed as a professional analytical dashboard on Hugging Face Spaces. Explore real-time simulations and historical trends here:
-👉 **[Live Weather Forecaster - Hugging Face Space](https://huggingface.co/spaces/Ironside35/weather-forecasting-ai)**
+## 🎯 Project Objective
+This project aims to build an advanced predictive model for atmospheric conditions, specifically focusing on mean temperature (`meantemp`) forecasting. Using the **Daily Delhi Climate Dataset**, we transitioned from static regression models to an **LSTM (Long Short-Term Memory) Neural Network**. By integrating deep learning with targeted feature engineering (seasonality extraction), this engine captures both chronological memory and seasonal trends with high industrial precision.
 
 ---
 
-## 🏛️ The 10-Step Engineering Discipline
-Following the **Senior AI Architect** workflow, this project adheres to a rigorous 10-step methodology:
+## 🛠️ The 10-Step Engineering Discipline
 
-1.  **Objective Definition:** Forecasting mean atmospheric temperature with high granularity.
-2.  **Exploratory Data Analysis (EDA):** Auditing multi-variable correlations in meteorological sequences.
-3.  **Feature Selection:** Identifying core drivers: Humidity, Wind Speed, and Mean Pressure.
-4.  **Data Transformation:** Normalizing temporal sequences and handling date-time indexing.
-5.  **Data Cleansing:** Eliminating noise and ensuring sequence continuity.
-6.  **Feature Engineering:** Architecting **Day of Year** and **Month** features to encode seasonality.
-7.  **Encoding:** Ensuring structural consistency for the XGBoost gradient boosting framework.
-8.  **Data Partitioning:** Implementing **Sequential Splitting** to maintain chronological integrity.
-9.  **Model Execution:** Training and hyperparameter tuning of the **XGBoost Regressor**.
-10. **Performance Audit:** Validating accuracy through **MAE (Mean Absolute Error)** and **R2 Score**.
+1.  **Objective:** Forecasting mean temperature using Deep Learning on time series data.
+2.  **EDA:** Auditing the climate dataset for structural integrity and chronological trends.
+3.  **Feature Selection:** Isolating the core vectors: 'date' and 'meantemp'.
+4.  **Transformation:** Converting raw date strings into functional `datetime` objects.
+5.  **Cleansing:** Ensuring strict temporal continuity by dropping null values and sorting chronologically.
+6.  **Feature Engineering:** Architecting a 'Month' feature to explicitly teach the neural network about seasonal weather transitions.
+7.  **Encoding:** Applying `pd.get_dummies()` (One-Hot Encoding) to digitize the categorical month data.
+8.  **Partitioning:** Scaling data via `MinMaxScaler(0,1)` and performing a sequential (chronological) Train-Test split.
+9.  **Model Execution:** Training the **LSTM Neural Network** (LSTM + Dense layers) to recognize complex weather patterns.
+10. **Performance Audit:** Evaluating industrial reliability via **RMSE** and **R² Score**.
 
----
 
-## 📊 Performance Metrics & Validation
-The engine delivers industry-standard accuracy for local climate prediction:
+    ### 🚀 Live Model Deployment
+The optimized deep learning artifacts (`weather_lstm_model.keras` & `weather_scaler.pkl`) are serialized and live on **Hugging Face Spaces**.
 
-* **R2 Score:** `0.8274` (Explains 82.7% of temperature variance).
-* **Mean Absolute Error (MAE):** `1.79°C` (Average deviation of less than 1.8 degrees).
-* **Temporal Logic:** Successfully captures the 30-day moving average and seasonal trend reversals.
+👉 **[Live Weather Forecaster on Hugging Face](https://huggingface.co/spaces/Ironside35/weather-forecasting-ai)** 🌦️💨
 
 ---
-
-## 🛠️ Tech Stack
-* **Language:** Python 3.9+
-* **Frameworks:** `streamlit`, `xgboost`, `scikit-learn`
-* **Data Visualization:** `plotly`, `matplotlib`
-* **Serialization:** `joblib`
-
----
-
-
----
-
-## 🏗️ Lead Architect
-**Kemal Demirbaş** 🏰🚀  
-*Halfway through the AI Marathon (10/21).*
+**Architect:** Kemal Demirbaş 🏰🚀  
+**Project #10 of 21** | *Securing the 10th fortress of the AI marathon.*
