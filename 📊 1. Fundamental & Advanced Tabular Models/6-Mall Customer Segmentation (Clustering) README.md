@@ -1,7 +1,3 @@
-# 🛍️ Project #06: Mall Customer DNA Visualizer
-## 📊 Category: 2-Unsupervised-Learning (Clustering Series)
-
-**Status:** Completed ✅ | **Performance:** 0.4709 Silhouette Coefficient 🚀
 
 # 🛍️ Project #06: Mall Customer DNA Visualizer
 ## 📊 Category: 2-Unsupervised-Learning (Clustering Series)
