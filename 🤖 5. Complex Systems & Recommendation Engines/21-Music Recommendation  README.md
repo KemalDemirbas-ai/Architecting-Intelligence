@@ -19,13 +19,13 @@ While previous projects used deep sequences, Project #21 uses **Mathematical Pro
 
 * **Genre Mapping:** Uses Cosine Similarity to compare 19-dimensional genre vectors.
 * **Weighting Formula:** Penalizes distance based on popularity variance to ensure a balanced discovery:
- 
+  $$d(a, b) = \text{cosine\_dist}(a_{genres}, b_{genres}) \times |a_{pop} - b_{pop}|$$
 
 ---
 
 ## 🚀 Live Music Discovery Platform
 Experience the final engine here:
-👉 **[Hugging Face Live Demo: Music Discovery Architecture](https://huggingface.co/spaces/Ironside35/Music-Spatial-Optimizer)**
+👉 **[Hugging Face Live Demo: Music Discovery Architecture](https://huggingface.co/spaces/Ironside35/Rhythm-Sequence-AI)**
 
 ---
 
