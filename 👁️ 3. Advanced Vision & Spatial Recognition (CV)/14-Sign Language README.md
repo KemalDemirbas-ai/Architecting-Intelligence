@@ -1,51 +1,31 @@
-# 🧤 Project #14: Sign Language Spatial Recognition
-**Architect:** Kemal Demirbaş 🏰🚀 | **Project Series:** 14 of 21
+# 🧤 Project #14: Sign Language Classification (Spatial Recognition)
+### 🏛️ Data Science Portfolio: 14 / 21
 
-[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/Ironside35/sign-language-recognition)
-[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
-[![TensorFlow 2.16](https://img.shields.io/badge/TensorFlow-2.16-orange.svg)](https://www.tensorflow.org/)
-
-## 🏛️ Project Overview
-This engine performs **Spatial Recognition** to interpret hand signs from the American Sign Language (ASL) alphabet. By architecting a deep **Convolutional Neural Network (CNN)**, the model bridges accessibility gaps through real-time computer vision.
-
-### 📊 Performance Audit
-* **Accuracy:** **98%** (Sign Language MNIST Test Suite)
-* **Dataset:** Sign Language MNIST (28,000+ grayscale images)
-* **Categories:** 24 Static Hand Signs (A-Y, excluding J/Z)
-* **Optimization:** Adam Optimizer with Data Augmentation (Rotation & Zoom)
+**Architect:** Kemal Demirbaş 🏰🚀  
+**Framework:** Computer Vision | Deep Learning (ANN vs. CNN Architectural Comparison)
 
 ---
 
-## 🚀 Live Deployment
-Test the real-time inference engine on Hugging Face Spaces:
-👉 **[Live Sign Language Recognition App](https://huggingface.co/spaces/Ironside35/sign-language-recognition)**
+## 🎯 Project Objective
+The goal of this project is to decode human hand gestures and classify them into the American Sign Language (ASL) alphabet. By architecting and comparing a baseline Artificial Neural Network (ANN) against a Deep Convolutional Neural Network (CNN), this project demonstrates the critical importance of spatial feature extraction in recognizing complex, high-entropy visual data without relying on external pre-trained models.
 
 ---
 
-## 🛠️ Engineering & Architecture
-The model uses a multi-layered CNN designed to capture sharp geometric edges in low-resolution environments:
-* **Feature Extraction:** Conv2D layers with BatchNormalization for stable learning.
-* **Regularization:** Dropout (0.3) to prevent overfitting.
-* **Input Layer:** $28 \times 28 \times 1$ (Grayscale Spatial Mapping).
+## 🛠️ The 10-Step Engineering Discipline
 
----
+1.  **Objective:** Multi-class classification of human hand signs (25 distinct classes representing A-Z).
+2.  **EDA:** Auditing the Kaggle Sign Language MNIST dataset to understand pixel intensity distribution across standardized hand gestures.
+3.  **Feature Selection:** Extracting 784 flattened grayscale pixel values per image from the raw dataset.
+4.  **Transformation :** Dynamically reshaping the flattened CSV data into **28x28** spatial matrices and strictly normalizing pixel values by scaling (`/ 255.0`).
+5.  **Cleansing:** Automating the data pipeline to handle raw Kaggle inputs and bypass corrupt geometries.
+6.  **Feature Engineering:** Utilizing `Conv2D` and `MaxPooling2D` layers to autonomously extract spatial hierarchies, contours, and edges from hand gestures.
+7.  **Encoding:** Applying `SparseCategoricalCrossentropy(from_logits=True)` for optimized memory management, bypassing manual One-Hot Encoding for integer labels.
+8.  **Partitioning:** Utilizing the predefined Kaggle Train/Test splits to ensure a standardized, unbiased evaluation environment.
+9.  **Model Execution:** Conducting a comparative training pipeline between a traditional dense **ANN** and a multi-layered Deep **CNN**.
+10. **Performance Audit:** Evaluating architectural superiority via an Accuracy Comparison Table and scatter plot distribution, proving the CNN's dominance in spatial recognition.
 
-## 🕵️ Architect's Insight (Critical Analysis)
 
-> *"I achieved **98% success** on the Sign Language MNIST dataset. However, in real-time Inference (Inference), I observed the effects of **Domain Shift** and **Background Noise** caused by a low resolution of $28\times$28. This experience developed my ability to manage the difference between real-world data and academic datasets."*
+    ### 🚀 Live Deployment
+This "Spatial Brain" is now live and ready to bridge the gap in accessibility through real-time sign-to-text conversion.
 
-### 🧱 The 10-Step Senior Reçete Applied:
-1. **Objective:** Multi-class classification for 24 hand gestures.
-2. **EDA:** Statistical audit of pixel distributions (0-255).
-3. **Feature Selection:** 784 pixel mapping from CSV input.
-4. **Transformation:** Reshaping flat arrays to $28 \times 28$ images.
-5. **Data Cleansing:** Normalizing pixel values to [0, 1].
-6. **Feature Engineering:** Strategic Data Augmentation (No horizontal flip to preserve spatial meaning).
-7. **Encoding:** One-Hot Encoding for 24 labels.
-8. **Partitioning:** Training and Validation split audit.
-9. **Model Execution:** 20 Epochs of Deep CNN training.
-10. **Performance Audit:** F1-Score & Confusion Matrix analysis.
-
----
-**Project #14** is part of the "21 Projects of an AI Architect" series.  
-*Next Stop: Project #15 - Spam Detection (NLP) 📧🛡️*
+👉 **[Live Sign Language Recognition on Hugging Face](https://huggingface.co/spaces/Ironside35/sign-language-recognition)** 🧤🧠
