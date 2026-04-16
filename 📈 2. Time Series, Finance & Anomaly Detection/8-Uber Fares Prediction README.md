@@ -1,55 +1,49 @@
-# 🚕 Project #08: Uber Dynamic Pricing Engine (NYC)
-## 📊 Category: Supervised Learning (Advanced Regression Architecture)
+# 🚕 Project #08: Uber Fare Prediction Engine
+## 📊 Category: Supervised Learning - Regression (08/21)
 
-**Status:** Completed ✅ | **Architecture:** Random Forest Regressor | **Performance:** 0.8579 R2 Score 🚀
+**Status:** Completed ✅ | **Performance:** 0.7749 R² Score (Industrial Benchmark) 🚀
 
----
-
-### 🎯 Industrial Objective
-The **Uber Dynamic Pricing Engine** is a high-performance regression system designed to predict ride fares across the New York City metro area. By processing **200,000+ authentic transaction logs**, this engine analyzes geospatial coordinates, temporal peaks, and passenger metrics to provide real-time price estimations, mirroring the core logic of global ride-sharing platforms.
+### 🎯 Project Objective
+The **Uber Fare Prediction Engine** is a high-performance regression system designed to calculate journey fares across the New York City metro area. By analyzing geospatial and temporal patterns from 200,000+ authentic transaction logs, this engine serves as a foundation for dynamic pricing algorithms.
 
 ---
 
-### 🚀 Live Deployment
-The model is live and accessible via Hugging Face Spaces. You can test the engine with real NYC coordinates:
+### 🚀 Live Industrial Deployment
+The engine is architected as a real-time "Fare Calculator" on Hugging Face. You can input coordinates and instantly get a price prediction based on 200K NYC transaction records.
 
 👉 **[Launch Live Uber Fare Predictor on Hugging Face](https://huggingface.co/spaces/Ironside35/Uber-Dynamic-Pricing-Engine)** 🚕💨
 
 ---
 
-### 🧠 The 10-Step Engineering Pipeline
-Following the **Architecting-Intelligence** framework:
+### 🧠 The 10-Step Operational Roadmap
+Adhering to our disciplined **Architecting-Intelligence** framework:
 
-1.  **Objective Definition:** Predicting continuous fare values (Regression) for dynamic pricing.
-2.  **Data Ingestion:** Secured a massive 200,000-row real-world dataset via a local ZIP vault.
-3.  **Advanced Cleaning (The NYC Filter):** Implemented a strict geospatial bounding box (Lat: 40.5-41.8, Lon: -74.3 to -72.8) to eliminate "Space-Uber" coordinate noise.
-4.  **Type Conversion:** Standardized `pickup_datetime` into usable temporal objects.
-5.  **Outlier Purge:** Filtered illogical records (Fares < $2.5, Passengers > 6).
-6.  **Geospatial Feature Engineering:** Architected the **Haversine Distance** feature to calculate spherical travel distance in KM.
-7.  **Temporal Extraction:** Derived `hour` and `day_of_week` features to capture peak traffic pricing.
-8.  **Model Pivot:** Upgraded from Linear Regression to a **Random Forest Regressor** to capture non-linear pricing relationships.
-9.  **Hyper-Parameter Tuning:** Optimized forest depth for maximum generalization on 200K samples.
-10. **Industrial Validation:** Achieved a definitive **0.8579 R2 Score** with a minimal **$3.50 RMSE**.
-
----
-
-### 🕵️ Architect's Insight: The "0.85" Breakthrough
-In large-scale financial datasets, moving from a near-zero $R^2$ to **0.8579** demonstrates the power of non-linear modeling. The **Haversine Formula** was the turning point; without converting raw coordinates into a physical distance metric, the model remained "geospatially blind."
-
-$$RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{true} - y_{pred})^2}$$
-
-By confining the data to the NYC Metro Bounding Box, we removed statistical noise from erroneous GPS pings, allowing the **Random Forest** to focus on the actual correlation between distance, time, and price.
+1.  **Understand the Purpose:** Transitioning to continuous value prediction (Regression) for dynamic pricing.
+2.  **Exploratory Data Analysis (EDA):** Utilizing `df.info()` and `df.describe()` to audit the raw dataset.
+3.  **Feature Selection:** Removing redundant identifiers like `Unnamed: 0` and `key` to focus on trip DNA.
+4.  **Type Conversion:** Standardizing `pickup_datetime` into usable temporal objects for peak-hour analysis.
+5.  **Data Wrangling:** Filtering out illogical records, including fares below $2.5 and invalid passenger counts.
+6.  **Feature Engineering:** Architecting the **Manhattan Distance** feature (absolute coordinate differences) to simulate real-world city grid navigation.
+7.  **Encoding:** Converting categorical hour slots into numerical format using `pd.get_dummies()`.
+8.  **Data Splitting:** Partitioning the dataset into Training (80%) and Testing (20%) sets.
+9.  **Model Training (Manual Fit-Predict):** Executing step-by-step training for **Decision Tree, Random Forest, Gradient Boosting,** and **Deep Learning (ANN)**.
+10. **Performance Evaluation:** Validating the architecture's success using the **R² Score** to ensure maximum generalization.
 
 ---
 
-### ⚙️ Tech Stack & Folder Structure
-- **Core:** Python, Scikit-Learn (Random Forest)
-- **Processing:** Pandas, NumPy, Haversine Logic
-- **Deployment:** Streamlit, Hugging Face Spaces
-- **Persistence:** Joblib
+### 📈 Final Performance Benchmarks
+| Model | R² Score | Status |
+| :--- | :--- | :--- |
+| **Gradient Boosting** | **0.7749** | **Winner** 🏆 |
+| **Random Forest** | 0.7276 | Stable |
+| **Deep Learning (ANN)** | 0.7223 | Validated |
+| **Decision Tree** | 0.4512 | Baseline |
 
-```text
-├── app.py               # Streamlit Deployment Script
-├── uber_master_model.joblib # Trained & Sealed Model
-├── requirements.txt      # Environment Dependencies
-└── README.md            # Architectural Documentation
+---
+
+### ⚙️ Tech Stack
+- **Engine:** Python | Scikit-Learn | TensorFlow (Keras)
+- **Processing:** Manhattan Distance Geometry | StandardScaler
+- **Deployment:** Hugging Face Spaces | Streamlit | Pickle
+
+**Architect:** Kemal Demirbaş | **Project 08 / 21** 🚀
