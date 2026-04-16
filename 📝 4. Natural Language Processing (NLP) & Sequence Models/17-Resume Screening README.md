@@ -2,44 +2,41 @@
 **Architect:** Kemal Demirbaş 🏰🚀 | **Project Series:** 17 of 21
 
 [![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Live%20Demo-blue)](https://huggingface.co/spaces/Ironside35/hr-resume-screener)
-[![Python](https://img.shields.io/badge/Python-3.8+-yellow)](https://www.python.org/)
 [![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-orange)](https://scikit-learn.org/)
-[![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-red)](https://streamlit.io/)
+[![TensorFlow](https://img.shields.io/badge/Framework-TensorFlow-red)](https://www.tensorflow.org/)
 
-## 🎯 Project Vision
-Modern Human Resources departments are often overwhelmed by the sheer volume of resumes received daily. This project introduces an **AI-Powered Screening Engine** that ingests, cleans, and classifies raw resume (CV) text into 28 distinct job categories (e.g., Data Science, AI Engineer, HR, etc.) in milliseconds. This implementation effectively reduces the operational workload of the recruitment pipeline by up to 90%.
-
----
-
-## 📊 Performance Audit (Architect's Audit)
-* **Final Test Accuracy:** **99.69%**
-* **Algorithm:** Multinomial Naive Bayes (OneVsRest Classifier)
-* **Vectorization:** TF-IDF (Term Frequency-Inverse Document Frequency)
+## 🎯 Vision: HR Pipeline Optimization
+In the modern corporate landscape, Human Resources departments are bottlenecked by manual resume reviews. This project deploys an **Automated Resume Screening Engine** that reads, cleanses, and classifies raw CVs into 25 specific job categories (Data Science, HR, Web Designing, etc.) in milliseconds. By leveraging **Natural Language Processing (NLP)** and **Deep Learning**, we eliminate human bias and drastically optimize the hiring pipeline.
 
 ---
 
-## 🏗️ Technical Architecture & Problem-Solving Process
-This project transcends standard machine learning workflows. Critical "on-site" challenges were resolved using Senior-level architectural interventions:
-
-1.  **Data Ingestion & Integrity (BOM Fix):** Invisible `\ufeff` (Byte Order Mark) characters within the CSV files were identified and neutralized, stabilizing the structural integrity of the dataframe.
-2.  **Surgical Column Targeting:** Corrected a critical "logic leak" where the model initially mistook address data (Location) for job roles. By strictly targeting the `job_position_name` feature, the "Shipping Branch Error" was eliminated.
-3.  **Omega Cleanse Pipeline:** Implemented a rigorous Regex pipeline to strip noise, including string-formatted lists (e.g., `['Java', 'Python']`), URLs, emojis, and non-ASCII characters, exposing the raw linguistic DNA of the resume.
-4.  **Overfitting (Memorization) Control:** To ensure the model learned generalizable patterns rather than just memorizing training samples, the `alpha` parameter was tuned to 1.0 (Laplace Smoothing) and the `ngram_range` was locked to (1,1), ensuring robust real-world performance.
+## 📊 Performance Audit & Architect's Report
+* **Final Accuracy:** **99.48%** (Achieved via Random Forest Ensemble) and **98.96%** (via Deep Learning).
+* **The Data Logistics & BOM Resolution:** During the initial phase, an invisible Byte Order Mark (BOM) `\ufeff` and a limited local dataset caused model starvation. As a Senior Architect, I intervened by routing the data ingestion directly to a robust 962-row cloud repository, stabilizing the data frame and restoring model integrity.
+* **The "Bottleneck" Optimization:** The standard Deep Learning architecture (with an 8-neuron hidden layer) choked on the high-dimensional sparse matrix of 25 job categories. I strategically expanded this bottleneck to **64 neurons**, immediately boosting the DL accuracy from 5% to 98.96%.
 
 ---
 
-## 🛠️ Technologies Used
-* **NLP (Natural Language Processing):** NLTK, Regex, TF-IDF.
-* **Machine Learning:** Scikit-Learn (MultinomialNB).
-* **Data Manipulation:** Pandas, NumPy.
-* **Deployment:** Streamlit & Hugging Face Spaces.
+## 🏗️ Architectural Core (The Senior Pipeline)
+This engine was built upon a strict NLP blueprint:
+1.  **Cloud Data Integration:** Bypassed local ZIP loading to dynamically extract the 962-row dataset from a raw GitHub URL.
+2.  **Noise Extraction:** Deployed the `neattext` library to systematically strip unprofessional artifacts like personal emails and emojis.
+3.  **Surgical Cleansing:** Stripped all remaining noise (URLs, special characters, and punctuations) to expose the raw linguistic data.
+4.  **Stopwords Filtration:** Automatically tokenized sentences and dropped high-frequency, low-information words.
+5.  **Label Encoding:** Converted 25 categorical job titles into machine-readable numeric IDs.
+6.  **Vectorization (TF-IDF):** Transformed qualitative resume text into a quantitative 4000-feature mathematical matrix.
+7.  **Stratified Partitioning:** Split the matrix using strict stratification to prevent minority class collapse across the 25 professions.
+8.  **Diversified Execution:** Trained three distinct models (Naive Bayes, Random Forest, and a customized Sequential Deep Learning network) to ensure architectural dominance.
 
 ---
 
-## 🚀 Live Experience
-Test the AI engine in real-time via the link below. Simply paste any resume text and observe how the engine intelligently routes the application to the correct department:
 
-👉 **[Hugging Face Live Demo: HR Resume Screener](https://huggingface.co/spaces/Ironside35/hr-resume-screener)**
+
+
+
+## 🚀 Live Demonstration
+Experience the Automated HR Engine in real-time. Paste any resume text and watch the AI route it to the correct department:
+👉 **[Live Resume Screener on Hugging Face](https://huggingface.co/spaces/Ironside35/hr-resume-screener)**
 
 ---
-*Next Stop: Project #18 - Customer Segmentation (RFM Analysis) 📊🏗️*
+*Next Stop: Project #18 - The Architecture Continues 📊🏗️*
