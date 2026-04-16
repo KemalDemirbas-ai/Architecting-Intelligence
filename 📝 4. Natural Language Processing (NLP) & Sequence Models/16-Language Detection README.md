@@ -1,45 +1,45 @@
-# 🏆 Project #16: Multilingual NLP Architect
+# 🏆 Project #16: Multilingual Language Detection Engine
 **Architect:** Kemal Demirbaş 🏰🚀 | **Project Series:** 16 of 21
 
-[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Live%20Demo-blue)](https://huggingface.co/spaces/Ironside35/multilingual-nlp-architect)
+[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/Ironside35/language-detection-engine)
 [![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-orange)](https://scikit-learn.org/)
-[![NLP](https://img.shields.io/badge/Domain-Natural%20Language%20Processing-green)]()
+[![TensorFlow](https://img.shields.io/badge/Framework-TensorFlow-red)](https://www.tensorflow.org/)
 
-## 🌍 Vision: The Linguistic DNA Engine
-This project focuses on **Natural Language Processing (NLP)** to identify the language of a given text among 20 different global languages. By extracting **Character N-Grams** and applying **Probabilistic Modeling**, the engine calculates the "Linguistic Fingerprint" of any sentence in milliseconds.
+## 🌍 Vision: The Linguistic DNA
+This project focuses on **Natural Language Processing (NLP)** to identify the language of a given text among 17 different global languages. By mapping linguistic patterns into a high-dimensional vector space, we've built an engine that decodes the "Linguistic DNA" of any sentence in milliseconds.
 
 ---
 
 ## 📊 Performance Audit & Architect's Report
-* **Overall Accuracy:** **95.90%** (Tested on a highly robust 70,000-row dataset).
-* **European Languages:** Flawless precision (1.00) for Turkish, English, French, Spanish, and German.
-* **The "Tokenization" Insight (Architect's Note):** A Senior AI Architect must acknowledge system boundaries. While the model excels globally, we identified a known domain limitation with Asian languages (e.g., Japanese Recall: 0.28). 
-    > *Insight:* "This occurs because `CountVectorizer` relies heavily on whitespace tokenization. Languages like Chinese and Japanese often lack spaces between words, causing the N-Gram vectorizer to miss individual character boundaries. Recognizing this limitation is crucial for deploying production-level Pan-Asian text processing systems."
+* **Overall Accuracy:** **91%+** (Testing on a robust multilingual dataset).
+* **European Languages:** Flawless precision for Turkish, English, French, and German.
+* **The "SMOTE" Insight:** To ensure the model doesn't favor dominant languages, we implemented **SMOTE (Synthetic Minority Over-sampling Technique)**. This balanced the representation of all 17 languages, ensuring high recall even for minority classes.
+* **Preprocessing Power:** By using a strict **10-Step Pipeline**, we removed non-linguistic noise (numbers, special chars) that often confuses standard classifiers.
 
 ---
 
-## 🏗️ Architectural Core (The Pipeline)
-The engine was constructed using a strict 5-step architectural pipeline:
-1.  **Data Logistics:** Robust extraction of 70k multi-language rows from the Hugging Face Hub.
-2.  **Cleansing Engine:** Advanced Regex integration to strip noise (numbers, URLs, special symbols) while carefully preserving crucial linguistic markers (e.g., 'ç', 'ñ', 'ü').
-3.  **Vectorization:** Deploying `CountVectorizer` to transform raw text into a high-dimensional Sparse Matrix of token frequencies.
-4.  **Probabilistic Execution:** Training a **Multinomial Naive Bayes** classifier, chosen specifically for its supreme computational speed and accuracy with high-dimensional text data.
-5.  **Deployment Integration:** Serializing the Model, Vectorizer, and Label Encoder via `joblib` for a seamless Streamlit UI deployment.
+## 🏗️ Architectural Core (The 10-Step Senior Reçete)
+The engine was built using a strict architectural pipeline inspired by the course modules:
+
+1.  **Data Acquisition:** Importing the multilingual dataset via direct URL for portability.
+2.  **Case Normalization:** Converting all text to lowercase to ensure character uniformity.
+3.  **Punctuation Removal:** Stripping special characters using the `str.replace('[^\w\s]')` regex pattern.
+4.  **Numerical Stripping:** Removing digits to focus purely on alphabetic linguistic markers.
+5.  **Artifact Cleaning:** Removing newline (`\n`) and carriage return (`\r`) artifacts.
+6.  **Stopwords Filtration:** Eliminating high-frequency but low-information words using `nltk.corpus`.
+7.  **Linguistic Tokenization:** Breaking down sentences into individual tokens using the `split()` method.
+8.  **Morphological Stemming:** Reducing words to their base forms (roots) via `PorterStemmer`.
+9.  **Feature Engineering:** Transforming processed text into numerical vectors.
+10. **TF-IDF & SMOTE Execution:** Applying **Term Frequency-Inverse Document Frequency** for importance ranking and **SMOTE** for dataset balancing before training the **Multinomial Naive Bayes** and **Deep Learning** models.
 
 ---
 
-## 📐 The Mathematical Engine (Bayes' Theorem)
-The system calculates the posterior probability of a language ($L$) given a specific text string ($T$):
 
-$$P(L | T) = \frac{P(T | L) \cdot P(L)}{P(T)}$$
 
-The Naive Bayes algorithm assumes independence between words/characters, allowing for lightning-fast inference on incoming text streams.
-
----
 
 ## 🚀 Live Demonstration
 Experience the Multilingual NLP Engine in real-time. Type any sentence and watch the mathematics decode the language:
-👉 **[Live Language Detector on Hugging Face](https://huggingface.co/spaces/Ironside35/multilingual-nlp-architect)**
+👉 **[Live Language Detector on Hugging Face](https://huggingface.co/spaces/Ironside35/language-detection-engine)**
 
 ---
 *Next Stop: Project #17 - The Architecture Continues 📊🏗️*
