@@ -18,7 +18,7 @@ Adhering to the **Architecting-Intelligence** industrial framework for unsupervi
 3. **Feature Selection:** Isolated **Annual Income (k$)** and **Spending Score (1-100)** as the primary behavioral dimensions for distance calculations.
 4. **Data Manipulation (Variance Preservation):** Intentionally skipped standardization (`StandardScaler`) because both selected features inherently operate on a similar scale (0-150k$ vs 1-100 score). Preserving the raw variance allowed for a more interpretable business output.
 5. **Optimal Cluster Discovery:** Iteratively utilized the **Elbow Method (WCSS - Within-Cluster Sum of Squares)**, deploying a dynamic loop to calculate inertia from $K=1$ to $K=10$, identifying **$K=5$** as the mathematical inflection point.
-6. **Advanced Metric Analysis:** Validated cluster cohesion and separation using **Silhouette Analysis**, achieving a robust score of **0.5539**.
+6. **Advanced Metric Analysis:** Validated cluster cohesion and separation using **Silhouette Analysis**, achieving a robust score of ** 0.4709**.
 7. **Model Training:** Deployed the **K-Means++** algorithm to ensure optimal and stable centroid initialization, preventing the random initialization trap.
 8. **Inference Generation:** Computed the cluster assignments (`y_kmeans`) mapping every retail customer to their specific behavioral archetype.
 9. **Strategic Visualization:** Engineered a high-precision scatter plot clearly identifying 5 distinct psychological personas along with their mathematical centroids.
